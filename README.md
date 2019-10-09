@@ -1,2 +1,13 @@
 # youtube-data-api-in-python
-searching content
+#searching content
+#To generate api_key take help of https://developers.google.com/youtube/v3
+import googleapiclient
+api_key="AIzaSyD7--HqCUGOLDftT8ylVXXI2n2lUCY7G5M"
+from googleapiclient.discovery import build
+youtube=build('youtube','v3',developerKey=api_key)
+req=youtube.search().list(q='avengers', part='snippet',type='video')
+res=req.execute()
+print(res)
+
+
+https://developers.google.com/youtube/v3
